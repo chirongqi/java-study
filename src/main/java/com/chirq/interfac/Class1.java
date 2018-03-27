@@ -14,4 +14,5 @@ public class Class1 extends Abstract1 {
         return 0;
     }
 
+    
 }

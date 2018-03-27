@@ -7,7 +7,7 @@ import java.nio.channels.FileChannel;
 
 public class CopyFile {
     public static void main(String[] args) throws Exception {
-        String infile = "C:\\web_server.rar";
+        String infile = "C:\\201705月易联明细.7z";
         String outfile = "C:\\copy.txt";
         // 获取源文件和目标文件的输入输出流
         FileInputStream fin = new FileInputStream(infile);
@@ -31,5 +31,8 @@ public class CopyFile {
             // 从输出通道中将数据写入缓冲区
             fcout.write(buffer);
         }
+
+        fin.close();
+        fout.close();
     }
 }

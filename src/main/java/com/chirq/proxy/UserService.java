@@ -1,7 +1,7 @@
 package com.chirq.proxy;
 
 public interface UserService {
-	public String getName(int id);
+    public String getName(int id);
 
-	public Integer getAge(int id);
+    public Integer getAge(int id);
 }
