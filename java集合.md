@@ -7,7 +7,7 @@
     * [适配器模式](#适配器模式)
 * [三、源码分析](#三源码分析)
     * [ArrayList](#arraylist)
-    * [Vector](#vector)
+
     * [CopyOnWriteArrayList](#copyonwritearraylist)
     * [LinkedList](#linkedlist)
     * [HashMap](#hashmap)
