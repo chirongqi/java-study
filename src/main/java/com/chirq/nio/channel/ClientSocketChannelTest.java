@@ -6,7 +6,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 
 /**
- * <b>类名</b>：ClientSocketChannel<br>
+ * <b>类名</b>：ClientSocketChannelTest<br>
  * <p>
  * <b>标题</b>：TODO
  * </p>
@@ -17,7 +17,7 @@ import java.nio.channels.SocketChannel;
  * @author <font color='blue'>rongqi.chi</font>
  * @date 18:14
  */
-public class ClientSocketChannel {
+public class ClientSocketChannelTest {
 
     public static void main(String[] args) {
         SocketChannel socketChannel = null;
@@ -26,8 +26,13 @@ public class ClientSocketChannel {
             socketChannel.connect(new InetSocketAddress("127.0.0.1", 6488));
 
             ByteBuffer writeBuffer = ByteBuffer.allocate(48);
+            writeBuffer.clear();
             writeBuffer.put("hello".getBytes());
-            socketChannel.write(writeBuffer);
+            writeBuffer.flip();
+            while(writeBuffer.hasRemaining()) {
+                socketChannel.write(writeBuffer);
+            }
+
 
             ByteBuffer redBuffer = ByteBuffer.allocate(48);
             socketChannel.read(redBuffer);
